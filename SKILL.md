@@ -48,9 +48,18 @@ If key already exists in history, treat as duplicate.
 2. Update company file:
    - If missing, create from `companies/00000案例公司.md` structure.
    - Update latest date, stage, summary, source link, and timeline row.
-3. Write `logs/YYYY-MM-DD.md`:
+3. If a fetched document is a scheme/circular/proposal document (e.g., contains `計劃`, `協議安排`, `要約`, `私有化建議`):
+   - Read document carefully (prefer direct PDF download + text extraction when browser PDF DOM is unreadable).
+   - Extract and write structured terms into company file under offer section:
+     - offer structure (cash / share / mixed)
+     - cancellation consideration per share (exact official wording)
+     - pre-conditions for making proposal/offer
+     - implementation conditions (e.g., court meeting thresholds, approvals, waivers)
+     - waiver scope (which conditions are non-waivable / waivable)
+   - Prefer official announcement wording over media summaries.
+4. Write `logs/YYYY-MM-DD.md`:
    - run time, duration, date range, hit count, new count, duplicate count, detail table.
-4. On failure, append one row to `logs/fail-log.md`.
+5. On failure, append one row to `logs/fail-log.md`.
 
 ## Stage mapping (default)
 - 含“每月更新” -> `每月更新`
