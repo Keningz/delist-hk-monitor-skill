@@ -17,6 +17,7 @@ Use this workflow for Kening's DelistHK project.
 ## Backup rule (mandatory)
 Before editing any existing file, create backup:
 - `<name>.bak(YYYY-MM-DD-HHMMUTC).md`
+- Keep at most 2 backups per source file; if more than 2 exist, delete oldest backups first.
 
 ## HKEX browser search steps
 1. Open: `https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=zh`
