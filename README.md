@@ -1,4 +1,4 @@
-# 港股私有化进度监测
+# 基于OpenClaw的港股私有化进度监测skill
 
 一个可复用的 OpenClaw Skill，用于监控港交所（HKEX）私有化/撤销上市相关公告，并更新 DelistHK 的 Obsidian 文档。
 
