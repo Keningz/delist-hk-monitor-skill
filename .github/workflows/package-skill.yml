@@ -1,0 +1,29 @@
+name: Package skill
+
+on:
+  push:
+    paths:
+      - 'SKILL.md'
+      - '.github/workflows/package-skill.yml'
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build .skill package
+        run: |
+          set -e
+          rm -f delist-hk-monitor.skill
+          mkdir -p _pack/delist-hk-monitor
+          cp SKILL.md _pack/delist-hk-monitor/SKILL.md
+          (cd _pack && zip -r ../delist-hk-monitor.skill delist-hk-monitor)
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: delist-hk-monitor-skill
+          path: delist-hk-monitor.skill
